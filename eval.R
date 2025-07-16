@@ -35,6 +35,7 @@ q6 <- 5 - eval_dat$Q03_System.Usability.Scale..Ich.finde..dass.es.in.der.App.zu.
 q8 <- 5 - eval_dat$Q03_System.Usability.Scale..Ich.empfinde.die.Bedienung.als.sehr.umständlich.
 q10 <- 5 - eval_dat$Q03_System.Usability.Scale..Ich.musste.eine.Menge.Dinge.lernen..bevor.ich.mit.der.App.arbeiten.konnte.
 
+
 sus_scores <- 2.5 * (q1 + q2 + q3 + q4 + q5 + q6 + q7 + q8 + q9 + q10)
 
 sus_mean <- mean(sus_scores)
@@ -54,3 +55,40 @@ ggplot(df, aes(x = "", y = value)) +
   labs(title = "Violin Plot of My Vector", 
        y = "Value") + 
   theme_minimal()
+
+# Funktionsumfangsfragen
+
+f6 <- eval_dat$Q06_Funktionsumfang.vermisst..Funktionsumfang
+f6_mean <- mean(f6)
+f6_mean # 2.375
+
+
+f8 <- eval_dat$Q08..Funktionsumfang
+f8_mean <- mean(f8)
+f8_mean # 1.25
+
+f6_sd <- sd(f6)
+f8_sd <- sd(f8)
+
+
+ggplot(data.frame(value = f6), aes(x = "", y = value)) + 
+  geom_violin(fill = "skyblue", color = "black") + 
+  geom_pointrange(aes( y = f6_mean, ymin = f6_mean - f6_sd, ymax = f6_mean + f6_sd),
+                  color = "red", size = 1.2) + 
+  geom_hline(yintercept = f6_mean, color = "black", linetype = "dotted", linewidth = 1) +
+  labs(title = "Violin Plot of Funktionsumfang vermisst", 
+       y = "Value") + 
+  theme_minimal()
+
+ggplot(data.frame(value = f8), aes(x = "", y = value)) + 
+  geom_violin(fill = "skyblue", color = "black") + 
+  geom_pointrange(aes( y = f8_mean, ymin = f8_mean - f8_sd, ymax = f8_mean + f8_sd),
+                  color = "red", size = 1.2) + 
+  geom_hline(yintercept = f8_mean, color = "black", linetype = "dotted", linewidth = 1) +
+  labs(title = "Violin Plot of Funktionsumfang", 
+       y = "Value") + 
+  theme_minimal()
+
+
+
+
