@@ -4,8 +4,8 @@ eval_dat
 
 # Age
 max_age <- max(eval_dat$Q13_Age) # 26
-min_age <- min(eval_dat$Q13_Age) # 22.125
-mean_age <- mean(eval_dat$Q13_Age) # 20
+min_age <- min(eval_dat$Q13_Age) # 20
+mean_age <- mean(eval_dat$Q13_Age) # 22.125
 max_age
 min_age
 mean_age
@@ -19,7 +19,7 @@ genders
 education <- table(eval_dat$Q14_Bildung)
 education
 # Abitur:
-# 5
+# 8
 
 # SUS-Fragebogen
 
@@ -39,7 +39,7 @@ q10 <- 5 - eval_dat$Q03_System.Usability.Scale..Ich.musste.eine.Menge.Dinge.lern
 sus_scores <- 2.5 * (q1 + q2 + q3 + q4 + q5 + q6 + q7 + q8 + q9 + q10)
 
 sus_mean <- mean(sus_scores)
-sus_mean
+sus_mean # 70.625
 sus_sd <- sd(sus_scores)
 sus_sd
 
@@ -52,8 +52,8 @@ ggplot(df, aes(x = "", y = value)) +
   geom_pointrange(aes( y = sus_mean, ymin = sus_mean - sus_sd, ymax = sus_mean + sus_sd),
                   color = "red", size = 1.2) + 
   geom_hline(yintercept = sus_mean, color = "black", linetype = "dotted", linewidth = 1) +
-  labs(title = "Violin Plot of My Vector", 
-       y = "Value") + 
+  labs(title = "Violin Plot der SUS Ergebnisse", 
+       y = "SUS Ergebnisse") + 
   theme_minimal()
 
 # Funktionsumfangsfragen
@@ -76,7 +76,7 @@ ggplot(data.frame(value = f6), aes(x = "", y = value)) +
   geom_pointrange(aes( y = f6_mean, ymin = f6_mean - f6_sd, ymax = f6_mean + f6_sd),
                   color = "red", size = 1.2) + 
   geom_hline(yintercept = f6_mean, color = "black", linetype = "dotted", linewidth = 1) +
-  labs(title = "Violin Plot of Funktionsumfang vermisst", 
+  labs(title = "Wurden Funktionen vermisst?", 
        y = "Value") + 
   theme_minimal()
 
@@ -85,7 +85,7 @@ ggplot(data.frame(value = f8), aes(x = "", y = value)) +
   geom_pointrange(aes( y = f8_mean, ymin = f8_mean - f8_sd, ymax = f8_mean + f8_sd),
                   color = "red", size = 1.2) + 
   geom_hline(yintercept = f8_mean, color = "black", linetype = "dotted", linewidth = 1) +
-  labs(title = "Violin Plot of Funktionsumfang", 
+  labs(title = "Ist der Funktionsumfang ausreichend", 
        y = "Value") + 
   theme_minimal()
 
