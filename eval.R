@@ -53,7 +53,7 @@ ggplot(df, aes(x = "", y = value)) +
                   color = "red", size = 1.2) + 
   geom_hline(yintercept = sus_mean, color = "black", linetype = "dotted", linewidth = 1) +
   labs(title = "Violin Plot der SUS Ergebnisse", 
-       y = "SUS Ergebnisse") + 
+       y = "SUS Einzelergebnisse") + 
   theme_minimal()
 
 # Funktionsumfangsfragen
@@ -85,7 +85,7 @@ ggplot(data.frame(value = f8), aes(x = "", y = value)) +
   geom_pointrange(aes( y = f8_mean, ymin = f8_mean - f8_sd, ymax = f8_mean + f8_sd),
                   color = "red", size = 1.2) + 
   geom_hline(yintercept = f8_mean, color = "black", linetype = "dotted", linewidth = 1) +
-  labs(title = "Ist der Funktionsumfang ausreichend", 
+  labs(title = "Ist der Funktionsumfang ausreichend?", 
        y = "Ergebnisse der Befragung") + 
   theme_minimal()
 
