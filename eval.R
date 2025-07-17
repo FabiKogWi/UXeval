@@ -77,7 +77,7 @@ ggplot(data.frame(value = f6), aes(x = "", y = value)) +
                   color = "red", size = 1.2) + 
   geom_hline(yintercept = f6_mean, color = "black", linetype = "dotted", linewidth = 1) +
   labs(title = "Wurden Funktionen vermisst?", 
-       y = "Value") + 
+       y = "Ergebnisse der Befragung") + 
   theme_minimal()
 
 ggplot(data.frame(value = f8), aes(x = "", y = value)) + 
@@ -86,7 +86,7 @@ ggplot(data.frame(value = f8), aes(x = "", y = value)) +
                   color = "red", size = 1.2) + 
   geom_hline(yintercept = f8_mean, color = "black", linetype = "dotted", linewidth = 1) +
   labs(title = "Ist der Funktionsumfang ausreichend", 
-       y = "Value") + 
+       y = "Ergebnisse der Befragung") + 
   theme_minimal()
 
 
